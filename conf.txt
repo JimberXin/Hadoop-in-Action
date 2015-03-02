@@ -1,0 +1,62 @@
+0  hadoop-env.sh  增加jdk位置
+# The java implementation to use.
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
+
+
+
+
+
+1  core-site.xml    增加临时文件，以及设置默认名字
+<configuration>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/Users/JimberXin/hadoop2.6.0/temp</value>
+    <description>A base for other temporary directory</description>
+  </property>
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://localhost:9000</value>
+  </property>
+</configuration>
+
+
+
+
+
+2 hdfs-site.xml  修改复制个数为1
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+</configuration>
+
+
+
+
+3 mapred-site.xml  配置JobTracker的地址与端口
+<configuration>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>localhost:9001</value>
+  </property>
+</configuration>
+
+
+
+
+4 yarn-site.xml
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+</configuration>
+
+
+
+
