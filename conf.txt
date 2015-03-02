@@ -10,7 +10,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk
 <configuration>
   <property>
     <name>hadoop.tmp.dir</name>
-    <value>/Users/JimberXin/hadoop2.6.0/temp</value>
+    <value>/Users/JimberXin/hadoop-2.6.0/temp</value>
     <description>A base for other temporary directory</description>
   </property>
   <property>
