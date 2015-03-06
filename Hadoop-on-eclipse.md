@@ -4,7 +4,7 @@
 ### 1. 安装ant
 
 官网下载最新版本： apache-ant-1.9.4, <http://ant.apache.org/bindownload.cgi>
-<img src="http://jimber.qiniudn.com/QQ20150304-1@2x.jpg" width = "450" height = "250" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150304-1@2x.jpg" width = "450" height = "250" alt="HDFS" />  
 选择 apache-ant-1.9.4.zip，解压到自己指定的某个文件夹下，例如我的是：	/Users/JimberXin/apache-ant-1.9.4接着，在根目录下，找到 .bash_profile（如没有自己创建一个）添加ant的路径
 	cd  /	vi .bash_profile在打开的文件里，在末尾最后添加如下命令：	export ANT_HOME=/Users/JimberXin/apache-ant-1.9.4	export PATH=$PATH:$ANT_HOME/bin按ecs退出， ZZ保存后退出	
 	source .bash_profile现在，可以查看版本信息了	ant -v
@@ -20,6 +20,7 @@
 	/Users/JimberXin/hadoop-2.6.0/hadoop2x-eclipse-plugin/src/contrib/eclipse-plugin编译源码，输入如下命令：	ant jar -Dversion=2.6.0 -Declipse.home=/Users/JimberXin/eclipse -Dhadoop.home=/Users/JimberXin/hadoop-2.6.0其中， 
 
 * -Dversion为hadoop 版本， 这里是2.6.0* -Declipse.home 为eclipse的位置* -Dhaddop.home为hadoop的位置
+
 <img src="http://jimber.qiniudn.com/QQ20150304-2@2x.jpg" width = "450" height = "200" alt="HDFS" />
 
 hadoop2.6.0开始编译编译过程依赖ivy，需要的时间有点久，编译完了以后，文件放在：
@@ -38,7 +39,8 @@ hadoop2.6.0开始编译编译过程依赖ivy，需要的时间有点久，编�
 	/Users/JimberXin/hadoop-2.6.0
 <img src="http://jimber.qiniudn.com/QQ20150304-5@2x.jpg" width = "450" height = "200" alt="HDFS" />	
 
-##### 3. 配置Map/Reduce视图* window -> Open Perspective -> other-> Map/Reduce -> 点击“OK”* windows -> show view -> other -> Map/Reduce Locations -> 点击“OK”##### 4. 配置 Map/Reduce Locations选项在“Map/Reduce Locations” Tab页 点击有房图标<大象+>或者在空白的地方右键，选择“New Hadoop location…”，弹出对话框“New hadoop location…”<img src="http://jimber.qiniudn.com/QQ20150304-3@2x.jpg" width = "400" height = "100" alt="HDFS" />
+##### 3. 配置Map/Reduce视图* window -> Open Perspective -> other-> Map/Reduce -> 点击“OK”* windows -> show view -> other -> Map/Reduce Locations -> 点击“OK”##### 4. 配置 Map/Reduce Locations选项在“Map/Reduce Locations” Tab页 点击有房图标<大象+>或者在空白的地方右键，选择“New Hadoop location…”，弹出对话框“New hadoop location…”
+<img src="http://jimber.qiniudn.com/QQ20150304-3@2x.jpg" width = "400" height = "100" alt="HDFS" />
 <img src="http://jimber.qiniudn.com/QQ20150304-4@2x.jpg" width = "450" height = "350" alt="HDFS" />
 参数说明如下：  1. Location name: 任意    2. map/reduce master：与mapred-site.xml里mapred.job.tracker设置一致3. DFS master：与core-site.xml里fs.default.name设置一致。 4. User name: 服务器上运行hadoop服务的用户名，这里是JimberXin### 三、新建项目并运行程序
 File --> New -->Other --> Map/Reduce Project。项目名可以随便取，如wordCounts。   
@@ -124,6 +126,10 @@ hdfs://localhost:9000为HDFS的地址，其中
 * 第一行 hdfs://localhost:9000/temp/input  中 /temp/input 为HDFS的输入目录
 * 第二行 hdfs://localhost:9000/temp/output 中 /temp/output 为HDFS的输出目录
 
+设置好的界面如下图： 
+ 
+<img src="http://jimber.qiniudn.com/QQ20150306-2@2x.jpg" width = "500" height = "320" alt="HDFS" />
+
 在输入文件夹下需要放有需要处理的文件，上一篇《Hadoop-on-mac.md》文章<https://github.com/JimberXin/Hadoop-in-Action/blob/master/Hadoop-config.md>已经有详细说明，这里简单说明一下：
 
 首先在本地文件夹下，创建输入文件夹input
@@ -134,9 +140,6 @@ hdfs://localhost:9000为HDFS的地址，其中
 输入命令
 	$ bin/hadoop fs –mkdir /temp	$ bin/hadoop fs –mkdir /temp/input最后，从本地文件夹向HDFS文件夹上传文件，  输入命令
 	$ bin/hadoop fs –put input /temp/input该命令将本地文件input下的文件拷贝到HDFS文件夹上的/temp/input上
-
-设置好的界面如下图：  
-<img src="http://jimber.qiniudn.com/QQ20150306-2@2x.jpg" width = "500" height = "320" alt="HDFS" />
 
 设置完毕后，点击Apply, 然后点击 Run。  
 如果一切都配置正常，会在 hadoop 的 /temp/output文件夹下生成两个输出文件，界面如下图所示：
