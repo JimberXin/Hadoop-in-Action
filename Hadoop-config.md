@@ -115,10 +115,11 @@ hadoop2.6.0默认是没有mapred-site.xml的，自己创建 mapred-site.xml，�
 <img src="http://jimber.qiniudn.com/QQ20150304-8@2x.jpg" width = "450" height = "350" alt="HDFS" />
 
 * MapReduce的页面: <http://localhost:8088>
+
 <img src="http://jimber.qiniudn.com/QQ20150304-9@2x.jpg" width = "450" height = "250" alt="HDFS" />
 
-##### (6)查看集群状态输入命令 
-	$ bin/hdfs dfsadmin –report显示结果如下：
+##### (6)查看集群状态输入命令: 
+	$ bin/hdfs dfsadmin –report显示结果如下:
 	15/03/04 19:18:08 WARN util.NativeCodeLoader: 	Unable to load native-hadoop library for your 	platform... using builtin-java classes where applicable	Configured Capacity: 120154296320 (111.90 GB)	Present Capacity: 22928572416 (21.35 GB)	DFS Remaining: 22928371712 (21.35 GB)	DFS Used: 200704 (196 KB)	DFS Used%: 0.00%	Under replicated blocks: 0	Blocks with corrupt replicas: 0	Missing blocks: 0		-------------------------------------------------	Live datanodes (1):	Name: 127.0.0.1:50010 (localhost)	Hostname: 192.168.1.118	Decommission Status : Normal	Configured Capacity: 120154296320 (111.90 GB)	DFS Used: 200704 (196 KB)	Non DFS Used: 97225723904 (90.55 GB)	DFS Remaining: 22928371712 (21.35 GB)	DFS Used%: 0.00%	DFS Remaining%: 19.08%	Configured Cache Capacity: 0 (0 B)	Cache Used: 0 (0 B)	Cache Remaining: 0 (0 B)	Cache Used%: 100.00%	Cache Remaining%: 0.00%	Xceivers: 1	Last contact: Wed Mar 04 19:18:09 CST 2015可知DataNode的个数以及运行状态是对的
 ### 四、运行wordCount程序
 #####1、准备工作######（1）创建本地示例文件首先在hadoop文件夹下，创建输入文件夹input
