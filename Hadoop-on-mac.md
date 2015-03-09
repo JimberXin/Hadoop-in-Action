@@ -112,11 +112,11 @@ hadoop2.6.0默认是没有mapred-site.xml的，自己创建 mapred-site.xml，�
 	7566 NameNode
 最后，验证Hadoop是否安装成功。打开浏览器，分别查看HDFS以及MapReduce的页面是否能打开。
 * HDFS的页面：<http://localhost:50070>
-<img src="http://jimber.qiniudn.com/QQ20150304-8@2x.jpg" width = "450" height = "350" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150304-8@2x.jpg" width = "600" height = "450" alt="HDFS" />
 
 * MapReduce的页面: <http://localhost:8088>
 
-<img src="http://jimber.qiniudn.com/QQ20150304-9@2x.jpg" width = "450" height = "250" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150304-9@2x.jpg" width = "650" height = "300" alt="HDFS" />
 
 ##### (6)查看集群状态输入命令: 
 	$ bin/hdfs dfsadmin –report显示结果如下:
