@@ -21,7 +21,7 @@
 
 * -Dversion为hadoop 版本， 这里是2.6.0* -Declipse.home 为eclipse的位置* -Dhaddop.home为hadoop的位置
 
-<img src="http://jimber.qiniudn.com/QQ20150304-2@2x.jpg" width = "450" height = "200" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150304-2@2x.jpg" width = "550" height = "300" alt="HDFS" />
 
 hadoop2.6.0开始编译编译过程依赖ivy，需要的时间有点久，编译完了以后，文件放在：
 	/build/contrib/eclipse-plugin/hadoop-eclipse-plugin-2.6.0.jar下，
@@ -37,11 +37,11 @@ hadoop2.6.0开始编译编译过程依赖ivy，需要的时间有点久，编�
 打开eclipse后，在eclipse的偏好设置里（mac系统在此处，如果是windows或者linux系统，在window->preference里），选择Map/Reduce的安装位置，即是hadoop的安装位置 
 	
 	/Users/JimberXin/hadoop-2.6.0
-<img src="http://jimber.qiniudn.com/QQ20150304-5@2x.jpg" width = "450" height = "200" alt="HDFS" />	
+<img src="http://jimber.qiniudn.com/QQ20150304-5@2x.jpg" width = "650" height = "400" alt="HDFS" />	
 
 ##### 3. 配置Map/Reduce视图* window -> Open Perspective -> other-> Map/Reduce -> 点击“OK”* windows -> show view -> other -> Map/Reduce Locations -> 点击“OK”##### 4. 配置 Map/Reduce Locations选项在“Map/Reduce Locations” Tab页 点击有房图标<大象+>或者在空白的地方右键，选择“New Hadoop location…”，弹出对话框“New hadoop location…”
-<img src="http://jimber.qiniudn.com/QQ20150304-3@2x.jpg" width = "400" height = "100" alt="HDFS" />
-<img src="http://jimber.qiniudn.com/QQ20150304-4@2x.jpg" width = "450" height = "350" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150304-3@2x.jpg" width = "600" height = "150" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150304-4@2x.jpg" width = "600" height = "450" alt="HDFS" />
 参数说明如下：  1. Location name: 任意    2. map/reduce master：与mapred-site.xml里mapred.job.tracker设置一致3. DFS master：与core-site.xml里fs.default.name设置一致。 4. User name: 服务器上运行hadoop服务的用户名，这里是JimberXin### 三、新建项目并运行程序
 File --> New -->Other --> Map/Reduce Project。项目名可以随便取，如wordCounts。   
 新建源文件WordCount.java，代码如下：
@@ -116,7 +116,7 @@ hadoop2.6.0开始编译编译过程依赖ivy，需要的时间有点久，编�
 * Main class 是运行的主类，这里根据代码是wordCounts包下的WordCount类
 
 设置好的界面如下图所示：  
-<img src="http://jimber.qiniudn.com/QQ20150306-1@2x.jpg" width = "450" height = "320" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150306-1@2x.jpg" width = "600" height = "450" alt="HDFS" />
 
 第二个选项： Arguments选项下的设置：
 
@@ -128,7 +128,7 @@ hdfs://localhost:9000为HDFS的地址，其中
 
 设置好的界面如下图： 
  
-<img src="http://jimber.qiniudn.com/QQ20150306-2@2x.jpg" width = "500" height = "320" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150306-2@2x.jpg" width = "600" height = "450" alt="HDFS" />
 
 在输入文件夹下需要放有需要处理的文件，上一篇《Hadoop-on-mac.md》文章<https://github.com/JimberXin/Hadoop-in-Action/blob/master/Hadoop-config.md>已经有详细说明，这里简单说明一下：
 
@@ -143,7 +143,7 @@ hdfs://localhost:9000为HDFS的地址，其中
 
 设置完毕后，点击Apply, 然后点击 Run。  
 如果一切都配置正常，会在 hadoop 的 /temp/output文件夹下生成两个输出文件，界面如下图所示：
-<img src="http://jimber.qiniudn.com/QQ20150307-1@2x.jpg" width = "400" height = "220" alt="HDFS" />
+<img src="http://jimber.qiniudn.com/QQ20150307-1@2x.jpg" width = "600" height = "350" alt="HDFS" />
 
 打开其中的part-00000,显示运行结果如下：
 
