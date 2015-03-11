@@ -15,6 +15,7 @@ import org.apache.hadoop.util.*;
 
 public class wordCount_new extends Configured implements Tool {
 	
+	// map class: set each one to 1
 	public static class myMap extends Mapper<LongWritable, Text, Text, IntWritable>{
 		private final static IntWritable one = new IntWritable(1);
 		private Text word = new Text();
@@ -29,6 +30,7 @@ public class wordCount_new extends Configured implements Tool {
 		}
 	}
 	
+	// reduce class: sum up the value
 	public static class myReduce extends Reducer<Text, IntWritable, Text, IntWritable>{
 		public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException{
 			int sum = 0;
@@ -39,6 +41,7 @@ public class wordCount_new extends Configured implements Tool {
 		}
 	}
 	
+	// run function: the configuration and setup is defined by Job class
 	public int run(String[] args) throws Exception{
 		Job job = new Job(getConf());   // Job class is already deprecated??!
 		
