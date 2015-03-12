@@ -42,6 +42,7 @@ public class wordCount_new extends Configured implements Tool {
 	}
 	
 	// run function: the configuration and setup is defined by Job class
+	// run function has to be overide
 	public int run(String[] args) throws Exception{
 		Job job = new Job(getConf());   // Job class is already deprecated??!
 		
