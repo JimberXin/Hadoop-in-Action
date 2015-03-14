@@ -1,6 +1,6 @@
 //Author: Junbo Xin
 //Date: 2015/03/10
-//Description: Using new API of Hadoop 2.6.0
+//Description: Using new API of Hadoop 2.6.0 to implement word count 
 
 import java.io.IOException;
 import java.util.*;
