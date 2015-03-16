@@ -101,7 +101,7 @@ xinjunbodeMacBook-Pro-2:hadoop-2.6.0 JimberXin$
 
 
 
-测试hadoop 状态
+测试hadoop 系统状态
 xinjunbodeMacBook-Pro-2:hadoop-2.6.0 JimberXin$ bin/hadoop dfsadmin -report
 
 
