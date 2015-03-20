@@ -52,7 +52,7 @@ public class Score extends Configured implements Tool{
 				count ++;  //计算总科目数
 				
 			}
-			int average = (int)sum/count;
+			int average = (int)sum/count; //计算平均成绩
 			context.write(key, new IntWritable(average));
 		}
 	}	
