@@ -33,11 +33,11 @@ public class Score extends Configured implements Tool{
 			while(tokenizerArticle.hasMoreTokens()){
 				//每行按空格划分
 				StringTokenizer tokenizerLine = new StringTokenizer(tokenizerArticle.nextToken());
-				String strName = tokenizerLine.nextToken(); // 姓名部分
-				String strScore = tokenizerLine.nextToken();  //成绩部分
-				Text name = new Text(strName);     // 学生姓名
-				int scoreInt = Integer.parseInt(strScore);    //学生成绩score of student
-				context.write(name, new IntWritable(scoreInt));  //输出姓名和成绩
+				String strName = tokenizerLine.nextToken();      // 姓名部分
+				String strScore = tokenizerLine.nextToken();    //成绩部分
+				Text name = new Text(strName);                  // 学生姓名
+				int scoreInt = Integer.parseInt(strScore);     //学生成绩score of student
+				context.write(name, new IntWritable(scoreInt)); //输出姓名和成绩
 			}
 		}
 	}
@@ -49,14 +49,15 @@ public class Score extends Configured implements Tool{
 			Iterator<IntWritable> iterator = values.iterator();
 			while(iterator.hasNext()){
 				sum += iterator.next().get();  //计算总分
-				count ++;  //计算总科目数
+				count ++;   //计算总科目数
 				
 			}
-			int average = (int)sum/count; //计算平均成绩
+			int average = (int)sum/count;   //计算平均成绩
 			context.write(key, new IntWritable(average));
 		}
 	}	
 	
+	// overide of class Tool
 	public int run(String[] args) throws Exception{
 		Job job = new Job(getConf());   // Job class is already deprecated??!
 		
